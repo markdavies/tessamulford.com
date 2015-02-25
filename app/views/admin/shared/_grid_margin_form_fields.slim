@@ -1,0 +1,33 @@
+
+.row
+  .col-sm-4
+  .col-sm-4
+    .form-group
+      .input-group
+        input.form-control type="text" name="#{prefix}[margins][top]" value=object.top_margin
+        span.input-group-addon px
+
+.row.margin-display-row
+  .col-sm-4
+    .form-group
+      .input-group
+        input.form-control type="text" name="#{prefix}[margins][left]" value=object.left_margin
+        span.input-group-addon px
+
+  .col-sm-4.margin-display
+    .margin-outer
+      .margin-inner
+
+  .col-sm-4
+    .form-group
+      .input-group
+        input.form-control type="text" name="#{prefix}[margins][right]" value=object.right_margin
+        span.input-group-addon px
+
+.row
+  .col-sm-4
+  .col-sm-4
+    .form-group
+      .input-group
+        input.form-control type="text" name="#{prefix}[margins][bottom]" value=object.bottom_margin
+        span.input-group-addon px

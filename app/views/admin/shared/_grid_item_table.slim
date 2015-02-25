@@ -1,0 +1,32 @@
+.form-group
+  label.control-label Grid Items
+  .sortable-list data-class="grid_item" data-constant="GridItem" data-submittable="true"
+    table.table.table-striped.table-hover
+      thead
+        tr
+          th Thumb
+          th Title
+          th Status
+          th Position
+          th Actions
+      tbody.sortable
+        - grid_item_table.each_with_index do |grid_item, i|
+          tr.sort-item data-id=grid_item.id class="#{!grid_item.status ? 'grayed' : ''}"
+            td=image_tag(grid_item.image(:thumb), width: 80, height: 80)
+            td=grid_item.plain_title
+            td=grid_item.status ? 'Visible' : 'Hidden'
+            td
+              select.position
+                - grid_item_table.length.times do |c|
+                  option value=c selected=('selected' if c == i)
+                    = c + 1
+
+            td.actions
+              ul
+                li
+                  - if params['controller'] == 'admin/pages'
+                    - href = edit_admin_page_grid_item_path(grid_item.page, grid_item)
+                  a class="fa fa-pencil-square-o" data-toggle="tooltip" data-placement="top" title="Edit Grid Item" href="#{href}"
+                li
+                  a class="fa fa-arrows" data-toggle="tooltip" data-placement="top" title="Position Grid Item" href="#"
+            

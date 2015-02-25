@@ -1,0 +1,39 @@
+table.table {
+  margin-bottom: 100px;
+  td.actions {
+    ul, li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li{
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+  th.short{
+    width: 12%;
+  }
+  .sortable{
+    .ui-sortable-placeholder{
+      height: 97px;
+    }
+    .ui-sortable-helper{
+      width: 500px;
+      background: white;
+    }
+  }
+  td span.fa{
+    font-size: 16px;
+  }
+}
+
+.grayed{
+  color: $mdgray;
+  .item-caption{
+    color: $mdgray;
+  }
+  &.sort-item{
+    opacity: .5;
+  }
+}

@@ -1,0 +1,14 @@
+//= require jquery-2.1.0
+//= require jquery-ui-1.10.4.custom.min
+//= require jquery_ujs
+//= require bootstrap
+//= require bootstrap-select
+//= require bootstrap-datepicker
+//= require underscore
+//= require eventable
+//= require sir-trevor
+//= require admin/ext/sir-trevor.uploader
+//= require admin/block_mixins/multi_uploadable
+//= require admin/blocks/gallery
+//= require admin/base
+//= require admin/sortable_list
