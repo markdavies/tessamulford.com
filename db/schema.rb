@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150225065724) do
+ActiveRecord::Schema.define(version: 20150226064401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,8 @@ ActiveRecord::Schema.define(version: 20150225065724) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "images", force: :cascade do |t|
-    t.string   "dimensions"
+    t.string   "attachment_dimensions"
+    t.string   "image_type"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.string   "attachment_file_name"
@@ -44,15 +45,26 @@ ActiveRecord::Schema.define(version: 20150225065724) do
     t.datetime "attachment_updated_at"
   end
 
+  create_table "pages", force: :cascade do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.text     "content"
+    t.text     "sidebar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "title"
+    t.string   "slug"
     t.text     "description"
     t.text     "credits"
     t.string   "url"
     t.text     "feature"
     t.text     "body"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "status",      default: true
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end

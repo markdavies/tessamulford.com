@@ -163,8 +163,6 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
-    friendly_id (5.0.5)
-      activerecord (>= 4.0.0)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -287,7 +285,6 @@ DEPENDENCIES
   dalli
   devise
   exportr
-  friendly_id (~> 5.0.0)
   jquery-rails
   kaminari
   meta-tags

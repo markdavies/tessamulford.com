@@ -62,13 +62,16 @@ $(document).ready(function () {
         SirTrevor.setBlockOptions('Gallery', {
             assetHost: assetHost
         });
-        
-        var editor = new SirTrevor.Editor({ 
+
+        var blockLimit = parseInt($(this).data('blocklimit') || 0);
+        var config = { 
             el: $(this), 
             blockTypes: [ 'Gallery' ],
-            blockLimit: 1, 
             defaultType: 'Gallery'
-        });
+        };
+        if(blockLimit > 0) config.blockLimit = blockLimit;
+        
+        var editor = new SirTrevor.Editor(config);
 
         editor.scrollTo = function ( element ) {
             $('html, body').animate({ scrollTop: element.offset().top }, 300, "linear");

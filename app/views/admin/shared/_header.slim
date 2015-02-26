@@ -15,6 +15,9 @@ header
           li class="#{ 'active' if params[:controller] == 'admin/projects' }"
            = link_to "Projects", admin_projects_path
 
+          li class="#{ 'active' if params[:controller] == 'admin/pages' }"
+           = link_to "Pages", admin_pages_path
+
         ul class="nav navbar-nav navbar-right"
           li= link_to 'Log Out', destroy_admin_user_session_path, method: :delete        
     

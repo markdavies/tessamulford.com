@@ -13,3 +13,6 @@ html
       = yield
     - if current_admin_user
       = render partial: "admin/shared/footer"
+
+    javascript:
+      assetHost = "#{Rails.configuration.action_controller.asset_host}";

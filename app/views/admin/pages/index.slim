@@ -1,0 +1,17 @@
+div.index-actions
+  div.row
+
+table.table.table-striped.table-hover
+  thead
+    tr
+      th Title
+      th Actions
+  tbody
+    - @pages.each_with_index do |page, i|
+      tr
+        td= page.title
+        td.actions
+          ul
+
+            li
+              a class="fa fa-pencil-square-o" data-toggle="tooltip" data-placement="top" title="Edit Page" href="#{edit_admin_page_path(page.slug)}"

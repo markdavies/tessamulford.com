@@ -1,0 +1,32 @@
+= form_for [:admin, @page], html: {}, url: admin_page_path(@page.slug) do |f|
+  div.row.form-actions
+    div.col-md-6.col-sm-offset-6    
+      div.btn-group
+        = f.submit 'Save', class: 'btn btn-default'
+
+        button.btn.btn-default.dropdown-toggle type="button" data-toggle="dropdown"
+          span.caret
+          span.sr-only Toggle Dropdown
+        ul.dropdown-menu.pull-right role="menu"
+          li 
+            a.save-edit href="#" Save and Edit
+          li
+            a href="#{admin_pages_path}" Cancel
+
+  .row
+
+    .col-sm-6
+
+      .form-group
+          = f.label :content, class: 'control-label'
+          = f.text_area :content, class: 'form-control', rows: 10
+
+
+    .col-sm-6
+
+      .form-group
+        = f.label :sidebar, class: 'control-label'
+        = f.text_area :sidebar, class: 'form-control', rows: 10
+
+      
+
